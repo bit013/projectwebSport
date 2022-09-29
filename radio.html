@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .form{
+            background-color: #f5f5f5;
+            padding: 50px 70px;
+        }
+        .title_block{
+            color: #221f1f;
+            font-size: 49px;
+            margin-bottom: 25px;
+        }
+        .form_blocks{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .comment_box{
+            width: 700px;
+            margin: auto;
+        }
+        .item_title{
+            color: #221f1f;
+            font-weight: lighter;
+            margin-bottom: 10px;
+        }
+        .form_input{
+            width: 270px;
+            padding: 16px 8px;
+            border-width: 0;
+            outline-color: #f89513;
+            outline-width: 1px;
+        }
+        .form_textarea{
+            resize: none;
+            width: 100%;
+            padding: 9px;
+            height: 90px;
+            border-width: 0;
+            outline-color: #f89513;
+            outline-width: 1px;
+        }
+        .text{
+            flex: 1;
+        }
+        .item_radio{
+            position: absolute;
+            left: -9999px;
+        }
+        .radio_fake{
+            width: 20px;
+            height: 20px;
+            border: 1px solid #dddcdc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .radio_fake:before{
+            content: "";
+            display: block;
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+            background-color: #f89513;
+        }
+        .item_radio:checked + .radio_fake{
+            border: 1px solid #f89513;
+        }
+         .item_radio:checked + .radio_fake:before{
+            width: 8px;
+            height: 8px;
+            border: 1px solid #f89513;
+        }
+        .answer_butt{
+            display: flex;
+        }
+        .form_butt{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="comment_box">
+        <div class="background_box">
+            <div class="form">
+                <div class="title_block">Оставьте отзыв!</div>
+                <form action="">
+                    <div class="form_blocks">
+                        <div class="item_form">
+                            <div class="item_title">Укажите ваше имя</div> 
+                            <input type="text" placeholder="Ванек" class="form_input">
+                        </div>
+                        <div class="item_form">
+                            <div class="item_title">Укажите вашу ссылку на профиль</div> 
+                            <input type="text" placeholder="vk.com/bebra" class="form_input">
+                        </div>
+                    </div>
+                    <div class="form_blocks">
+                        <div class="item_form text">
+                            <div class="item_title">Текст отзыва</div> 
+                            <textarea class="form_textarea">Мне понравилось</textarea>
+                        </div>
+                    </div>
+                    <div class="form_blocks">
+                        <div class="item_form">
+                            <div class="item_title">Отображать фото в отзыве?</div> 
+                            <div class="form_butt">
+                                <label class="answer_butt">
+                                    <input type="radio" class="item_radio" name="photo" checked >
+                                    <span class="radio_fake"></span>
+                                    <span class="radio_textS">Да</span>
+                                </label>
+                                <label class="answer_butt">
+                                    <input type="radio" class="item_radio" name="photo">
+                                    <span class="radio_fake"></span>
+                                    <span class="radio_textS">Нет</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="item_form">
+                            <input type="submit" class="item_button" value="Send">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
